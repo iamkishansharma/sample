@@ -6,10 +6,12 @@ import 'package:flutter/services.dart';
 import 'package:sample/FileHandingDemo.dart';
 import 'package:sample/TakePitureDemo.dart';
 import 'dart:math';
-
+import 'AnimationDemo.dart';
+import 'ApiCallDemo.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import 'LoationOnMaps.dart';
 import 'google_maps_ex.dart';
 
 Future<void> main() async {
@@ -44,6 +46,9 @@ class MyApp extends StatelessWidget {
             ),
         '/fileHandling': (context) => MyFileDemo(),
         '/g_map':(context) => GoogleMapState(),
+        '/apiCall': (context)=> EmailVerifier(),
+        '/mapMarkers': (context) => LocationOnMaps(),
+        '/gotoAnimation': (context) => AnimationHome(),
       },
     );
   }
@@ -112,12 +117,37 @@ class PageOne extends StatelessWidget {
               child: Text("Goto Maps"),
             ),
 
+            //API here
+            FlatButton(
+              color: Colors.blueAccent,
+              onPressed: () {
+                Navigator.pushNamed(context, '/apiCall');
+              },
+              child: Text("Goto Email Verifier"),
+            ),
+
+            FlatButton(
+              color: Colors.pinkAccent,
+              onPressed: () {
+                Navigator.pushNamed(context, '/mapMarkers');
+              },
+              child: Text("Goto Map Markers"),
+            ),
+
+            FlatButton(
+              color: Colors.deepOrangeAccent,
+              onPressed: () {
+                Navigator.pushNamed(context, '/gotoAnimation');
+              },
+              child: Text("Goto Animation"),
+            ),
+
             FittedBox(
               child: FlatButton(
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(100))
+                    borderRadius: BorderRadius.all(Radius.circular(100))
                 ),
-                color: Colors.blueAccent,
+                color: Colors.orangeAccent,
                 onPressed: () async {
                   SharedPreferences pref =
                   await SharedPreferences.getInstance();

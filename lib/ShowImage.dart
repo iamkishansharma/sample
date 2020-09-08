@@ -24,8 +24,17 @@ class ShowImage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.cyan,
       ),
-      body: Center(
-        child: Image.file(File(showImage()),),
+      body: Container(
+      width: MediaQuery.of(context).size.width,
+        height: MediaQuery.of(context).size.height,
+        color: Colors.redAccent,
+        child: InteractiveViewer(
+          boundaryMargin: EdgeInsets.all(20.0),
+          minScale: 0.1,
+          maxScale: 10,
+          scaleEnabled: true,
+          child: Image.file(File(showImage()),),
+        ),
       ),
       floatingActionButton: Container(
         width: 100.0,

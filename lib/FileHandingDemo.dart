@@ -57,17 +57,17 @@ class _MyFileDemoState extends State<MyFileDemo> {
                       showDialog(
                           context: context,
                           builder: (context) => AlertDialog(
-                                content: Text("Enter some Text!" +
-                                    Platform.operatingSystemVersion),
-                                title: Text("File Handling Error"),
-                                actions: [
-                                  FlatButton(
-                                    color: Colors.blue,
-                                    child: Text("OK"),
-                                    onPressed: () {},
-                                  )
-                                ],
-                              ));
+                            content: Text("Enter some Text!" +
+                                Platform.operatingSystemVersion),
+                            title: Text("File Handling Error"),
+                            actions: [
+                              FlatButton(
+                                color: Colors.blue,
+                                child: Text("OK"),
+                                onPressed: () {},
+                              )
+                            ],
+                          ));
                     }
                   },
                   color: Colors.pinkAccent,
