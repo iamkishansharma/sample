@@ -37,6 +37,7 @@ dependencies:
   http:
   #for drawing lines
   flutter_polyline_points:
+  provider:
 
 dev_dependencies:
   flutter_test:

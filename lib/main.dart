@@ -5,6 +5,7 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:sample/FileHandingDemo.dart';
 import 'package:sample/LearningNewThings.dart';
+import 'package:sample/ProviderDemo.dart';
 import 'package:sample/TakePitureDemo.dart';
 import 'dart:math';
 import 'AnimationDemo.dart';
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
         '/mapMarkers': (context) => LocationOnMaps(),
         '/gotoAnimation': (context) => AnimationHome(),
         '/newThings': (context) => LearningNewThings(),
+        '/providerDemo':(context)=> ProvideDemoApp(),
       },
     );
   }
@@ -149,6 +151,13 @@ class PageOne extends StatelessWidget {
                 Navigator.pushNamed(context, '/newThings');
               },
               child: Text("Goto Buttons"),
+            ),
+            FlatButton(
+              color: Colors.deepPurpleAccent,
+              onPressed: () {
+                Navigator.pushNamed(context, '/providerDemo');
+              },
+              child: Text("Provider Demo"),
             ),
 
             FittedBox(
