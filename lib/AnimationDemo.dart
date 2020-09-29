@@ -77,7 +77,7 @@ class _AnimationDemoState extends State<AnimationDemo> {
               onPressed: () {
                 //TODO::
                 setState(() {
-                  if (opa <= 1.0 && b) {
+                  if (opa < 1.0 && b) {
                     opa += 0.2;
                     b = true;
                   } else {

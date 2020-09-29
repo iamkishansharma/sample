@@ -4,8 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:sample/FileHandingDemo.dart';
+import 'package:sample/GoodPractice.dart';
 import 'package:sample/LearningNewThings.dart';
 import 'package:sample/ProviderDemo.dart';
+import 'package:sample/StreamBuilderDemo.dart';
 import 'package:sample/TakePitureDemo.dart';
 import 'dart:math';
 import 'AnimationDemo.dart';
@@ -51,8 +53,12 @@ class MyApp extends StatelessWidget {
         '/apiCall': (context)=> EmailVerifier(),
         '/mapMarkers': (context) => LocationOnMaps(),
         '/gotoAnimation': (context) => AnimationHome(),
+
+        //After Mid Term
         '/newThings': (context) => LearningNewThings(),
         '/providerDemo':(context)=> ProvideDemoApp(),
+        '/streamingApp': (context) => MyStreamApp(),
+        '/goodPractices':(context) => GoodPractices(),
       },
     );
   }
@@ -158,6 +164,20 @@ class PageOne extends StatelessWidget {
                 Navigator.pushNamed(context, '/providerDemo');
               },
               child: Text("Provider Demo"),
+            ),
+            FlatButton(
+              color: Colors.blueGrey,
+              onPressed: () {
+                Navigator.pushNamed(context, '/streamingApp');
+              },
+              child: Text("Streaming Demo"),
+            ),
+            FlatButton(
+              color: Colors.brown,
+              onPressed: () {
+                Navigator.pushNamed(context, '/goodPractices');
+              },
+              child: Text("Good Practices"),
             ),
 
             FittedBox(
